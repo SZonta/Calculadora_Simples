@@ -1,0 +1,74 @@
+namespace Calculadora_Simples
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Instanciando objeto
+            Operacoes operacoes = new();
+
+            // Recebendo dados dos números que sofreram a operação
+            Console.WriteLine("Digite dois números para que seja realizada a operação");
+            string[] vet = Console.ReadLine().Split(' ');
+            double numero1 = double.Parse(vet[0]);
+            double numero2 = double.Parse(vet[1]);
+
+            // Recebendo dados da operação que será realizada
+            Console.WriteLine("\nAgora escolha qual operação deseja realizar: " +
+                              "\n1 - Soma" +
+                              "\n2 - Subtração" +
+                              "\n3 - Divisão" +
+                              "\n4 - Multiplicação\n");
+
+            var option = Convert.ToInt32(Console.ReadLine());
+
+            // Validando a escolha do usuário e executando a operação conforme escolhido
+            if (option == 1)
+            {
+                Console.WriteLine($"\nA soma de {numero1} e {numero2} é: {operacoes.Somar(numero1, numero2)}");
+            }
+            else if (option == 2)
+            {
+                Console.WriteLine($"\nA subtração de {numero1} e {numero2} é: {operacoes.Subtrair(numero1, numero2)}");
+            }
+            else if (option == 3)
+            {
+                Console.WriteLine($"\nA divisão de {numero1} e {numero2} é: {operacoes.Dividir(numero1, numero2)}");
+            }
+            else if (option == 4)
+            {
+                Console.WriteLine($"\nA multiplicação entre {numero1} e {numero2} é: {operacoes.Multiplicar(numero1, numero2)}");
+            }
+            else
+            {
+                Console.WriteLine("\nNúmero digitado não está entre as opções, digite novamente");
+            }
+
+            Console.ReadKey();
+        }
+    }
+
+    // Classe contendo as operações
+    public class Operacoes
+    {
+        public double Somar(double n1, double n2)
+        {
+            return n1 + n2;
+        }
+
+        public double Subtrair(double n1, double n2)
+        {
+            return n1 - n2;
+        }
+
+        public double Dividir(double n1, double n2)
+        {
+            return n1 / n2;
+        }
+
+        public double Multiplicar(double n1, double n2)
+        {
+            return n1 * n2;
+        }
+    }
+}
