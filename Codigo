@@ -7,7 +7,7 @@ namespace Calculadora_Simples
             // Instanciando objeto
             Operacoes operacoes = new();
 
-            // Recebendo dados dos números que sofreram a operação
+            // Recebendo dados dos números que sofrerão a operação
             Console.WriteLine("Digite dois números para que seja realizada a operação");
             string[] vet = Console.ReadLine().Split(' ');
             double numero1 = double.Parse(vet[0]);
